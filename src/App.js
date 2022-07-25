@@ -29,13 +29,11 @@ function App() {
       </div>
       <div className='placeholder'>
       <form className='forms'> 
-        <div className='holder-text'>
-          <p>Search GIFs here</p>
-        </div>
         <input type="text"
          autoCapitalize='off'
          autoCorrect='off' 
          autoComplete='off'
+         placeholder='Search GIFs here'
          className='writting'>
          </input>
         </form> 
