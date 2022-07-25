@@ -19,11 +19,21 @@
 .menu-containers a{
   text-decoration: none;
   color: white;
+  font-weight: 600;
+  width: 100%;
+  font-size: 15px;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-containers{
   list-style-type: none;
   margin: 0px;
+  padding: 0;
+  border-radius: 5px;
   display: flex;
   justify-content: space-around;
   background: linear-gradient(to right,
@@ -39,6 +49,49 @@
   cursor: pointer;
   float: left;
   height: 36px;
+  border-right: 4px solid rgb(18, 18, 18);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.placeholder{
+background-color: rgb(255, 255, 255);
+left: 0;
+top: 0px;
+position: relative;
+width: 100%;
+border-radius: 8px;
+user-select: none;
+}
+
+.holder-text {
+color: black;
+display: flex;
+font-size: 18px;
+letter-spacing: 1px;
+}
+
+.forms{
+  display: flex;
+  flex-grow: 1;
+}
+
+.writting{
+box-sizing: border-box;
+appearance: none;
+border-radius: 0px;
+font-weight: normal;
+width: 100%;
+border: 0px;
+margin: 0px;
+z-index: 2;
+float: left;
+position: relative;
+height: 52px;
+letter-spacing: 1px;
+font-size: 18px;
 }
 
 body{
