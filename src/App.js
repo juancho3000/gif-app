@@ -1,10 +1,12 @@
 import gif from './giphy-logo-1.svg';
 import './App.css';
+import GifFetch from './components/API';
 
 function App() {
   return (
     <div className="App-header">
       <h1>GIF app</h1>
+      <div className='resource'><GifFetch/></div>
       <div className='logo'>
         <img src={gif} className="App-logo" alt='logo'/>
       </div>
