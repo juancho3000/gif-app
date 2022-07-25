@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import gif from './giphy-logo-1.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App-header">
+      <h1>GIF app</h1>
+      <div className='logo'>
+        <img src={gif} className="App-logo" alt='logo'/>
+      </div>
+      <div className='menu-choices'>
+        <ul className='menu-containers'>
+          <li className='menu-list1 YRN'>
+            <a href='https://giphy.com/'>Reactions</a>
+          </li>
+          <li className='menu-list2 YRN'>
+          <a href='https://giphy.com/'>Entertainment</a>
+          </li>
+          <li className='menu-list3 YRN'>
+          <a href='https://giphy.com/'>Sports</a>
+          </li>
+          <li className='menu-list4 YRN'>
+          <a href='https://giphy.com/'>Stickers</a>
+          </li>
+          <li className='menu-list5 YRN'>
+          <a href='https://giphy.com/'>Artists</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
