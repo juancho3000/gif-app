@@ -9,7 +9,8 @@ const Gf = () => {
         const fetchingData = async () =>{
             const result = await axios("https://api.giphy.com/v1/gifs/trending", {
                 params: {
-                    api_key:"ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6"
+                    api_key:"ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6",
+                    limit:20
                 }
             });
             console.log(result);
