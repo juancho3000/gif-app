@@ -66,7 +66,7 @@ box-sizing: border-box;
 appearance: none;
 border-radius: 8px;
 font-weight: normal;
-width: 100%;
+width: 57%;
 border: 0px;
 margin: 0px;
 z-index: 2;
@@ -78,6 +78,14 @@ font-size: 18px;
 left: 0;
 top: 0px;
 user-select: none;
+}
+
+.btn{
+  background:linear-gradient(111.3deg, #4a69bb 9.6%, #cd4dcc 93.6%);
+  color: white;
+  padding: 16px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 body{

@@ -1,4 +1,5 @@
 import React from "react";
+import  {BiSearchAlt} from "react-icons/bi";
 
 const Write = () =>{
     return(
@@ -11,6 +12,9 @@ const Write = () =>{
          placeholder='Search GIFs here'
          className='writting'>
          </input>
+         <button type="submit" className="btn">
+            <BiSearchAlt/>
+            </button>
         </form> 
       </div>
     );

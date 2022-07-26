@@ -5,8 +5,6 @@ import Tags from './components/GIF-app-choices';
 import Write from './components/GIF-app-searchbar';
 
 function App() {
- 
-
   return (
     <div className="App-header">
       <h1>GIF app</h1>
@@ -25,5 +23,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
