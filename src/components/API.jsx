@@ -17,8 +17,19 @@ const Gf = () => {
         };
         fetchingData();
     },[]);
+
+const renderGifs= () =>{
+    return data.map(el => {
+        return( 
+        <div key={el.id} className="render-pics">
+            <img alt="pic" src={el.images.fixed_height.url} />
+        </div>
+        )
+    })
+}
+
     return( 
-        <div className="resource">fetch outcome</div>
+        <div className="resource">{renderGifs()}</div>
     );
 }
 
