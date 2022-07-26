@@ -1,48 +1,27 @@
-import gif from './giphy-logo-1.svg';
 import './App.css';
-//import { useEffect } from 'react';
-//import axios from 'axios';
 import Gf from './components/API';
+import Logo from './components/GIF-app-logo';
+import Tags from './components/GIF-app-choices';
+import Write from './components/GIF-app-searchbar';
+
 function App() {
  
 
   return (
     <div className="App-header">
       <h1>GIF app</h1>
-      <div className='logo'>
-        <img src={gif} className="App-logo" alt='logo'/>
+      <div>
+        <Logo/>
       </div>
-      <div className='menu-choices'>
-        <ul className='menu-containers'>
-          <li className='menu-list1 YRN'>
-            <a href='https://giphy.com/'>Reactions</a>
-          </li>
-          <li className='menu-list2 YRN'>
-          <a href='https://giphy.com/'>Entertainment</a>
-          </li>
-          <li className='menu-list3 YRN'>
-          <a href='https://giphy.com/'>Sports</a>
-          </li>
-          <li className='menu-list4 YRN'>
-          <a href='https://giphy.com/'>Stickers</a>
-          </li>
-          <li className='menu-list5 YRN'>
-          <a href='https://giphy.com/'>Artists</a>
-          </li>
-        </ul>
+      <div>
+        <Tags/>
       </div>
-      <div className='placeholder'>
-      <form className='forms'> 
-        <input type="text"
-         autoCapitalize='off'
-         autoCorrect='off' 
-         autoComplete='off'
-         placeholder='Search GIFs here'
-         className='writting'>
-         </input>
-        </form> 
-        <div className='resource'><Gf/></div>
+      <div>
+        <Write/>
       </div>
+        <div>
+          <Gf/>
+          </div>
     </div>
   );
 }

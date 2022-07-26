@@ -17,7 +17,9 @@ const Gf = () => {
         };
         fetchingData();
     },[]);
-    <div className="thi-appi">fetch outcome</div>
+    return( 
+        <div className="resource">fetch outcome</div>
+    );
 }
 
 export default Gf;
