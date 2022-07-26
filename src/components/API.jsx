@@ -1,24 +1,22 @@
-import { GiphyFetch } from '@giphy/js-fetch-api'
+//import { GiphyFetch } from '@giphy/js-fetch-api'
 
-const Gf = new GiphyFetch('ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6')
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-const categories = async () => {
-    try{
-        const result = await Gf.categories();
-        console.log(`categories`, result)
-    }catch (error){
-        console.error(`categories`, error)
-    }
-};
-const trending = async () => {
-    try{
-        const result = await Gf.trending();
-        console.log(`trending`, result);
-    }catch(error) {
-        console.error(`trending`, error);
-    }
-};
-categories();
-trending();
+const Gf = () => {
+    const[data, setData] = useState([]);
+    useEffect(()=> {
+        const fetchingData = async () =>{
+            const result = await axios("https://api.giphy.com/v1/gifs/trending", {
+                params: {
+                    api_key:"ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6"
+                }
+            });
+            console.log(result);
+            setData(result.data.data)
+        };
+        fetchingData();
+    })
+}
 
 export default Gf;
