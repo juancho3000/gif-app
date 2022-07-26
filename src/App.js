@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App-header">
       <h1>GIF app</h1>
-      <div className='resource'><Gf/></div>
       <div className='logo'>
         <img src={gif} className="App-logo" alt='logo'/>
       </div>
@@ -42,6 +41,7 @@ function App() {
          className='writting'>
          </input>
         </form> 
+        <div className='resource'><Gf/></div>
       </div>
     </div>
   );
