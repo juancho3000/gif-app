@@ -56,16 +56,18 @@
   flex-grow: 1;
 }
 
-.forms{
-  flex-grow: 1;
+.divider{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
 }
 
 .writting{
+  width: 85%;
 box-sizing: border-box;
 appearance: none;
 border-radius: 8px;
 font-weight: normal;
-width: 57%;
 border: 0px;
 margin: 0px;
 z-index: 2;
@@ -101,9 +103,9 @@ user-select: none;
 
 .hello{
   display: flex;
+  width: 85%;
   justify-content: center;
   flex-wrap: wrap;
-  width: 80%;
   margin: 0 auto;
 }
 
