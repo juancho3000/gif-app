@@ -16,7 +16,7 @@ const handleSubmit = (e) => {
             params:{
                 api_key:"ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6",
                 q:search,
-                limit:10
+                limit:20
             }
         });
         console.log(catchData)
