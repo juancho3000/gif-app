@@ -6,14 +6,36 @@
   padding: 0;
 }
 
+.title{
+display: flex;
+justify-content: center;
+}
+
+.fotografia{
+  display: flex;
+}
+
 .App-logo{ 
-  width: 5%;
+  width: 10%;
+  display: flex;
+  height: 140%;
+}
+
+.logo{
+  display: flex;
+  margin: -8% 30% 12%;
 }
 
 .menu-choices{
   float: left;
-  margin: -90px 0px 0px 132px;
   width: 500px;
+}
+
+.etiquetas{
+  display: flex;
+  position: relative;
+  top: -7vh;
+  margin: 2% 10% 0%;
 }
 
 .menu-containers a{
@@ -56,6 +78,13 @@
   flex-grow: 1;
 }
 
+.placeholder{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
 .divider{
   display: flex;
   justify-content: center;
@@ -63,7 +92,6 @@
 }
 
 .writting{
-  width: 85%;
 box-sizing: border-box;
 appearance: none;
 border-radius: 8px;
@@ -103,7 +131,7 @@ user-select: none;
 
 .hello{
   display: flex;
-  width: 85%;
+  width: 0;
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;

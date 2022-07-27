@@ -7,11 +7,13 @@ import Write from './components/GIF-app-searchbar';
 function App() {
   return (
     <div className="App-header">
+      <div className='title'>
       <h1>GIF app</h1>
-      <div>
+      </div>
+  <div className='fotografia'>
         <Logo/>
       </div>
-      <div>
+      <div className='etiquetas'>
         <Tags/>
       </div>
       <section className='subject-1'> 
