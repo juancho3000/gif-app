@@ -30,7 +30,7 @@ justify-content: center;
 .etiquetas{
   display: flex;
   position: relative;
-  top: -7vh;
+  margin: -10% 10% 3%;
   justify-content: center;
 }
 
@@ -103,6 +103,11 @@ font-size: 18px;
 left: 0;
 top: 0px;
 user-select: none;
+}
+
+.warning{
+  margin: 11% 0% 0%;
+  background-color: lightcoral;
 }
 
 .btn{

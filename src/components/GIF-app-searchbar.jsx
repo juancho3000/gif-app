@@ -5,6 +5,7 @@ import axios from "axios";
 const Write = () =>{
     const[search, setSearch] = useState("");
     const[info, setInfo] = useState([]);
+    const [alerta, setAlerta] = useState(false);
     const changeQuest = (e)=>{
         setSearch(e.target.value)
     };
@@ -12,7 +13,9 @@ const Write = () =>{
 const handleSubmit = (e) => {
     e.preventDefault();
     const fetchData = async() => {
-        const catchData = await axios("https://api.giphy.com/v1/gifs/search",{
+        setAlerta(false);
+        try{
+            const catchData = await axios("https://api.giphy.com/v1/gifs/search",{
             params:{
                 api_key:"ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6",
                 q:search,
@@ -21,6 +24,12 @@ const handleSubmit = (e) => {
         });
         console.log(catchData)
         setInfo(catchData.data.data)
+
+        }catch(err){
+            setAlerta(true);
+            setTimeout(()=> setAlerta(false), 5000);
+            console.log(err);
+        }
     };
     fetchData();
 }
@@ -31,8 +40,18 @@ const giveSearch = () => {
             <div key={el.id} className="search-fetch">
                 <img alt="foto" src={el.images.fixed_height.url}/>
             </div>
-        )
-    })
+        );
+    });
+};
+const renderError = () => {
+    if(alerta){
+        return (
+            <div className="warning" role={alert}>
+                It seems there was an error, try again
+            </div>
+        );
+    };
+    //console.log(renderError);
 }
     return(
         <div className='placeholder'>
@@ -49,7 +68,10 @@ const giveSearch = () => {
          <button type="submit" onClick={handleSubmit} className="btn">
             <BiSearchAlt/>
             </button>
+            <div className="hit-miss">
+                {renderError()}
             <div className="hello">{giveSearch()}</div>
+            </div>
         </form> 
       </div>
     );
