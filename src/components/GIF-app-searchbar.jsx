@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import  {BiSearchAlt} from "react-icons/bi";
+//import ErrorShowing from "./GIF-app-alert";
+
 import axios from "axios";
 
 const Write = () =>{
     const[search, setSearch] = useState("");
     const[info, setInfo] = useState([]);
     const [alerta, setAlerta] = useState(false);
-    const changeQuest = (e)=>{
-        setSearch(e.target.value)
+    
+    const changeQuest = event =>{
+        setSearch(event.target.value)
     };
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    const fetchData = async() => {
+const handleSubmit = async event => {
+    event.preventDefault();
+    //const fetchData = async() => {
         setAlerta(false);
         try{
             const catchData = await axios("https://api.giphy.com/v1/gifs/search",{
@@ -22,17 +25,24 @@ const handleSubmit = (e) => {
                 limit:20
             }
         });
+
+        if(catchData.data.data.length === 0)
+            return alerta(true);
+            else( setInfo(catchData.data.data) )
+            
+
         console.log(catchData)
         setInfo(catchData.data.data)
 
         }catch(err){
             setAlerta(true);
-            setTimeout(()=> setAlerta(false), 5000);
+            setTimeout(()=> setAlerta(false), 4000);
             console.log(err);
         }
+             
     };
-    fetchData();
-}
+    //fetchData();
+//} 
 
 const giveSearch = () => {
     return info.map(el=>{
@@ -43,37 +53,40 @@ const giveSearch = () => {
         );
     });
 };
+
 const renderError = () => {
     if(alerta){
         return (
-            <div className="warning" role={alert}>
-                It seems there was an error, try again
+            <div class="alert alert-danger" role="alert">
+             It seems there was an error, try again
             </div>
         );
     };
-    //console.log(renderError);
 }
-    return(
-        <div className='placeholder'>
-      <form className='forms'> 
-        <input type="text"
-         autoCapitalize='off'
-         autoCorrect='off' 
-         autoComplete='off'
-         placeholder='Search GIFs here'
-         className='writting'
-         onChange={changeQuest}
-         value={search}>
-         </input>
-         <button type="submit" onClick={handleSubmit} className="btn">
-            <BiSearchAlt/>
-            </button>
-            <div className="hit-miss">
-                {renderError()}
-            <div className="hello">{giveSearch()}</div>
-            </div>
-        </form> 
-      </div>
-    );
+
+return(
+    <div className='placeholder'>
+  <form className='forms'> 
+    <input type="text"
+     autoCapitalize='off'
+     autoCorrect='off' 
+     autoComplete='off'
+     placeholder='Search GIFs here'
+     className='writting'
+     id="setting"
+     onChange={changeQuest}
+     value={search}>
+     </input>
+     <button type="submit" onClick={handleSubmit} className="btn">
+        <BiSearchAlt/>
+        </button>
+        <div className="hit-miss" id="error">
+            {renderError()}
+        <div className="hello">{giveSearch()}</div>
+        </div>
+    </form> 
+  </div>
+); 
+  
 }
 export default Write;

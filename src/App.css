@@ -79,6 +79,8 @@ justify-content: center;
   display: flex;
   justify-content: center;
   margin: auto;
+  background-color: black;
+  opacity: 1;
 }
 
 .divider{
@@ -105,17 +107,17 @@ top: 0px;
 user-select: none;
 }
 
-.warning{
-  margin: 11% 0% 0%;
-  background-color: lightcoral;
-}
-
 .btn{
   background:linear-gradient(111.3deg, #4a69bb 9.6%, #cd4dcc 93.6%);
   color: white;
   padding: 16px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.alert{
+  padding: 0;
+  margin: 1%;
 }
 
 .resource{
