@@ -1,8 +1,9 @@
 import './App.css';
-import Gf from './components/API';
-import Logo from './components/GIF-app-logo';
-import Tags from './components/GIF-app-choices';
-import Write from './components/GIF-app-searchbar';
+import Rendering from './components/Rendering';
+import Logo from './components/Logo';
+import Tags from './components/Tags';
+import Searchbar from './components/Searchbar';
+//import { SearchBar } from '@giphy/react-components';
 
 function App() {
   return (
@@ -18,16 +19,21 @@ function App() {
       </div>
       <section className='subject-1'> 
       <div>
-        <Write/>
+        <Searchbar/>
       </div>
       </section>
     <span className='divider'></span>
       <section className='subject-2'>
         <div>
-        <Gf/>
+        <Rendering/>
         </div>
         </section>
     </div>
   );
 }
 export default App;
+
+//changing component names, same title same export, pass the render of gifs to App and send the Render to what will be 
+//trending.jsx using props
+//SearchBar.jsx
+//Treding.jsx

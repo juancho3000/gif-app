@@ -3,7 +3,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const Gf = () => {
+const Rendering = () => {
     const[data, setData] = useState([]);
     useEffect(()=> {
         const fetchingData = async () =>{
@@ -33,4 +33,4 @@ const renderGifs= () =>{
     );
 }
 
-export default Gf;
+export default Rendering;

@@ -4,7 +4,7 @@ import  {BiSearchAlt} from "react-icons/bi";
 
 import axios from "axios";
 
-const Write = () =>{
+const Searchbar = () =>{
     const[search, setSearch] = useState("");
     const[info, setInfo] = useState([]);
     const [alerta, setAlerta] = useState(false);
@@ -89,4 +89,4 @@ return(
 ); 
   
 }
-export default Write;
+export default Searchbar;
