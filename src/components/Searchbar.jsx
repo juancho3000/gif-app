@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import  {BiSearchAlt} from "react-icons/bi";
 //import ErrorShowing from "./GIF-app-alert";
-
 import axios from "axios";
 
-const Searchbar = () =>{
+const Searchbar = props =>{
     const[search, setSearch] = useState("");
     const[info, setInfo] = useState([]);
-    const [alerta, setAlerta] = useState(false);
+    const[alerta, setAlerta] = useState(false);
     
     const changeQuest = event =>{
         setSearch(event.target.value)
@@ -66,7 +65,7 @@ const renderError = () => {
 
 return(
     <div className='placeholder'>
-  <form className='forms'> 
+  <form className='forms' onSubmit={props.data}> 
     <input type="text"
      autoCapitalize='off'
      autoCorrect='off' 
