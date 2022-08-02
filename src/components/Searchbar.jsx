@@ -3,9 +3,9 @@ import  {BiSearchAlt} from "react-icons/bi";
 //import ErrorShowing from "./GIF-app-alert";
 import axios from "axios";
 
-const Searchbar = props =>{
+const Searchbar = (props) =>{
     const[search, setSearch] = useState("");
-    const[info, setInfo] = useState([]);
+    const[info, setInfo] = React.useState([]);
     const[alerta, setAlerta] = useState(false);
     
     const changeQuest = event =>{
@@ -27,8 +27,7 @@ const handleSubmit = async event => {
 
         if(catchData.data.data.length === 0)
             return alerta(true);
-            else( setInfo(catchData.data.data) )
-            
+            else( setInfo(catchData.data.data))
 
         console.log(catchData)
         setInfo(catchData.data.data)
@@ -37,13 +36,10 @@ const handleSubmit = async event => {
             setAlerta(true);
             setTimeout(()=> setAlerta(false), 4000);
             console.log(err);
-        }
-             
+        }     
     };
-    //fetchData();
-//} 
 
-const giveSearch = () => {
+const renderSearch = () => {
     return info.map(el=>{
         return(
             <div key={el.id} className="search-fetch">
@@ -65,7 +61,7 @@ const renderError = () => {
 
 return(
     <div className='placeholder'>
-  <form className='forms' onSubmit={props.data}> 
+  <form className='forms'> 
     <input type="text"
      autoCapitalize='off'
      autoCorrect='off' 
@@ -81,7 +77,7 @@ return(
         </button>
         <div className="hit-miss" id="error">
             {renderError()}
-        <div className="hello">{giveSearch()}</div>
+        <div className="hello">{renderSearch(info)}</div>
         </div>
     </form> 
   </div>

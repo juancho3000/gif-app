@@ -3,24 +3,21 @@ import Logo from './components/Logo';
 import Tags from './components/Tags';
 import Searchbar from './components/Searchbar';
 import { useState, useEffect } from 'react';
-import axios from "axios";
-//import { SearchBar } from '@giphy/react-components';
+//import axios from "axios";
+import { GiphyFetch } from '@giphy/js-fetch-api';
 
 function App() {
   //start where using useEffect
     const [data, setData] = useState([]);
     useEffect(()=>{
-      //fetching gifs that are trnding
+      const gifKey = new GiphyFetch("ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6")
+      //fetchData beggining
       const fetchData = async () => {
-        const outcome = await axios("https://api.giphy.com/v1/gifs/trending", {
-          params: {
-            api_key:"ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6",
-            limit:20
-          }
-        });
-        console.log(outcome)
-        setData(outcome.data.data)
-      }
+        const outcome = await gifKey.trending({ limit:20 })
+        //fetchData ending 
+      console.log(outcome)
+      setData(outcome.data)
+    }
       fetchData();   
     },[]);
 
@@ -50,13 +47,12 @@ function App() {
       </div>
       <section className='subject-1'> 
       <div>
-        <Searchbar />
+        <Searchbar/>
       </div>
       </section>
     <span className='divider'></span>
       <section className='subject-2'>
         <div className="resource">{renderGifs()}
-        
         </div>
         </section>
     </div>
