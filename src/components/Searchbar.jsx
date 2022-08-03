@@ -1,43 +1,36 @@
 import React, { useState } from "react";
 import  {BiSearchAlt} from "react-icons/bi";
-//import ErrorShowing from "./GIF-app-alert";
-import axios from "axios";
+//import axios from "axios";
+import { GiphyFetch } from '@giphy/js-fetch-api';
 
-const Searchbar = (props) =>{
+const Searchbar = () =>{
     const[search, setSearch] = useState("");
-    const[info, setInfo] = React.useState([]);
+    const[info, setInfo] = useState([]);
     const[alerta, setAlerta] = useState(false);
     
     const changeQuest = event =>{
         setSearch(event.target.value)
     };
-
+const myKey = new GiphyFetch("ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6")
 const handleSubmit = async event => {
     event.preventDefault();
-    //const fetchData = async() => {
         setAlerta(false);
         try{
-            const catchData = await axios("https://api.giphy.com/v1/gifs/search",{
-            params:{
-                api_key:"ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6",
-                q:search,
-                limit:20
-            }
-        });
+            const catchData = await myKey.search(search,{ limit:20 })
 
-        if(catchData.data.data.length === 0)
-            return alerta(true);
-            else( setInfo(catchData.data.data))
+        if(catchData.data.length === 0)
+            return setAlerta(true);
+            else( setInfo(catchData.data))
 
-        console.log(catchData)
-        setInfo(catchData.data.data)
-
+        console.log(catchData);
+        setInfo(catchData.data);
+       
         }catch(err){
             setAlerta(true);
             setTimeout(()=> setAlerta(false), 4000);
             console.log(err);
-        }     
-    };
+        } 
+    }; 
 
 const renderSearch = () => {
     return info.map(el=>{
@@ -77,7 +70,7 @@ return(
         </button>
         <div className="hit-miss" id="error">
             {renderError()}
-        <div className="hello">{renderSearch(info)}</div>
+        <div className="hello">{renderSearch()}</div>
         </div>
     </form> 
   </div>

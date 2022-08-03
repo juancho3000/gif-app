@@ -3,7 +3,6 @@ import Logo from './components/Logo';
 import Tags from './components/Tags';
 import Searchbar from './components/Searchbar';
 import { useState, useEffect } from 'react';
-//import axios from "axios";
 import { GiphyFetch } from '@giphy/js-fetch-api';
 
 function App() {
@@ -60,7 +59,4 @@ function App() {
 }
 export default App;
 
-//changing component names, same title same export, pass the render of gifs to App and send the Render to what will be 
-//trending.jsx using props
-//SearchBar.jsx
-//Treding.jsx
+//passing SearchBar.jsx as props to App.js
