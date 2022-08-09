@@ -1,34 +1,30 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import  {BiSearchAlt} from "react-icons/bi";
-//import axios from "axios";
-import { GiphyFetch } from '@giphy/js-fetch-api';
+//import { GiphyFetch } from '@giphy/js-fetch-api';
+import { searchGif } from "./utils";
 
 const Searchbar = props =>{
-    const[search, setSearch] = useState("");
+    const[searchText, setSearchText] = useState("");
     const[alerta, setAlerta] = useState(false);
     
     const changeQuest = event =>{
-        setSearch(event.target.value)
+        setSearchText(event.target.value)
     };
-const myKey = new GiphyFetch("ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6")
+
+//const myKey = new GiphyFetch("ESXpJv9GdToCoypY0MQTzMNJ56DLaKu6")
+
 const handleSubmit = async event => {
-    event.preventDefault();
-        setAlerta(false);
-        try{
-            const catchData = await myKey.search(search,{ limit:20 })
-
-        if(catchData.data.length === 0)
-            return setAlerta(true);
-            else( props.setInfo(catchData.data))
-
-        console.log(catchData);
-        props.setInfo(catchData.data);
-       
-        }catch(err){
-            setAlerta(true);
-            setTimeout(()=> setAlerta(false), 4000);
-            console.log(err);
-        } 
+    event.preventDefault(); 
+    setAlerta(false);
+        const datos = searchGif(searchText, props.setInfo, ()=> {
+                {setAlerta(true); 
+                setTimeout(()=>setAlerta(false),4000); 
+                console.log('sorry, there was an error');}        
+        });
+        if(datos.data.length === 0)
+        return setAlerta(true);
+        else(props.setInfo(datos.data))
+        //props.setInfo(datos.data);
     }; 
 
 const renderError = () => {
@@ -37,9 +33,8 @@ const renderError = () => {
             <div class="alert alert-danger" role="alert">
              It seems there was an error, try again
             </div>
-        );
-    };
-}
+        )
+   }};
 
 return(
     <div className='placeholder'>
@@ -52,17 +47,22 @@ return(
      className='writting'
      id="setting"
      onChange={changeQuest}
-     value={search}>
+     value={searchText}>
      </input>
      <button type="submit" onClick={handleSubmit} className="btn">
         <BiSearchAlt/>
         </button>
-        <div className="hit-miss" id="error">
-            {renderError()}
+    <div className="hit-miss" id="error">
+        {renderError()}
         </div>
     </form> 
   </div>
-); 
-  
+);   
 }
 export default Searchbar;
+
+//error test no definitive yet
+//catch{callbackError()
+   // setAlerta(true);
+   // setTimeout(()=>setAlerta(false),4000);
+//} 

@@ -4,6 +4,7 @@ import Tags from './components/Tags';
 import Searchbar from './components/Searchbar';
 import { useState, useEffect } from 'react';
 import { GiphyFetch } from '@giphy/js-fetch-api';
+import { trendingGif } from './components/utils';
 
 function App() {
   //start where using useEffect
@@ -17,13 +18,14 @@ function App() {
         //fetchData ending 
       console.log(outcome)
       setData(outcome.data)
+      console.log(trendingGif);
     }
       fetchData();   
     },[]);
 
     const renderGifs = () => {
       return(
-        data.map(el =>{
+        data.map(el =>{ 
           return(
             <div key={el.id} className="render-pics">
               <img alt="pic" src={el.images.fixed_height.url} />
@@ -61,9 +63,10 @@ function App() {
         <Searchbar setInfo={setInfo}/>
       </div>
       </section>
-    <span className='divider'></span>
       <section className='subject-2'>
       <div className="hello">{renderSearch()}</div>
+      
+      <span className='divider'></span>
         <div className="resource">{renderGifs()}</div>
         </section>
     </div>
