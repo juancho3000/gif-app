@@ -7,8 +7,9 @@ async function searchGif(search, setInfo, callbackError) {
      try{
          const results = await myKey.search (search,{ limit:20 })
     if(results.data.length > 0)
-    setInfo(data.data);
-    return(results)
+    setInfo(results.data);
+    console.log(results)
+    return(results.data);
      }catch {callbackError()}
   };
 

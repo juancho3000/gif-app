@@ -15,16 +15,17 @@ const Searchbar = props =>{
 
 const handleSubmit = async event => {
     event.preventDefault(); 
-    setAlerta(false);
-        const datos = searchGif(searchText, props.setInfo, ()=> {
-                {setAlerta(true); 
+    setAlerta(true);
+        const inform = searchGif(searchText,props.setInfo, ()=> {
+               //{setAlerta(true); 
                 setTimeout(()=>setAlerta(false),4000); 
-                console.log('sorry, there was an error');}        
+                console.log('sorry, there was an error');
+                //}
         });
-        if(datos.data.length === 0)
+        if(inform.data.length === 0 )
         return setAlerta(true);
-        else(props.setInfo(datos.data))
-        //props.setInfo(datos.data);
+        else(setSearchText(inform.data))
+        //props.searchText(inform.data.data);
     }; 
 
 const renderError = () => {
