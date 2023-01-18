@@ -1,6 +1,5 @@
-import  { useState } from "react";
-import  {BiSearchAlt} from "react-icons/bi";
-//import { GiphyFetch } from '@giphy/js-fetch-api';
+import { useState } from "react";
+import { BiSearchAlt } from "react-icons/bi";
 import { searchGif } from "./utils";
 
 const Searchbar = props =>{
@@ -15,18 +14,19 @@ const Searchbar = props =>{
 
 const handleSubmit = async event => {
     event.preventDefault(); 
-    setAlerta(true);
-        const inform = searchGif(searchText,props.setInfo, ()=> {
-               {setAlerta(true); 
+    setAlerta(false);
+
+        const inform = await searchGif(searchText, props.setInfo, props.results, ()=> {
+               setAlerta(true); 
                 setTimeout(()=>setAlerta(false),4000); 
-                console.log('sorry, there was an error');
-                }
+                console.log('sorry, there was an error');   
         });
-        if(inform.data.length === 0 )
-        return setAlerta(true);
-        else(setSearchText(inform.data))
-        props.searchText(inform.data.data);
-    }; 
+        if(searchGif.data.data.length === 0){
+            return setAlerta(true)
+        }else{setAlerta(false)
+            console.log(searchGif.data)
+        }    
+}; 
 
 const renderError = () => {
     if(alerta){

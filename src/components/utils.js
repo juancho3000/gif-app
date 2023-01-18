@@ -10,7 +10,7 @@ async function searchGif(search, setInfo, callbackError) {
     setInfo(results.data);
     console.log(results)
     return(results.data);
-     }catch {callbackError()}
+     }catch{callbackError()}
   };
 
  async function trendingGif(setData,callbackError) {
