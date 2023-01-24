@@ -50,12 +50,12 @@ function App() {
   return (
     <div className="App-header">
       <div className='title'>
-      <h1>GIF app</h1>
+        <h1>GIF APP</h1>
       </div>
-  <div className='fotografia'>
+  <div className='logo-container'>
         <Logo/>
       </div>
-      <div className='etiquetas'>
+      <div className='tags'>
         <Tags/>
       </div>
       <section className='subject-1'> 
@@ -63,8 +63,9 @@ function App() {
         <Searchbar setInfo={setInfo}/>
       </div>
       </section>
+      <span className='divider-2'></span>
       <section className='subject-2'>
-      <div className="hello">{renderSearch()}</div>
+      <div className="subject-2-render">{renderSearch()}</div>
       
       <span className='divider'></span>
         <div className="resource">{renderGifs()}</div>

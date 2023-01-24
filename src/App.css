@@ -9,13 +9,18 @@
 .title{
 display: flex;
 justify-content: center;
+margin: 4% 1% 0% -2%;
+}
+
+.title h1{
+  margin: -1%;
 }
 
 .App-logo{ 
   width: 10%;
   display: flex;
-  height: 140%;
-  margin: 0% 10% 5% 10%;
+  height: 98px;
+  margin: 2% 6% -5% 15%;
 }
 
 .logo{
@@ -27,7 +32,7 @@ justify-content: center;
   width: 500px;
 }
 
-.etiquetas{
+.tags{
   display: flex;
   position: relative;
   margin: -10% 10% 3%;
@@ -87,13 +92,13 @@ justify-content: center;
 .divider{
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
 }
 
 .writting{
 box-sizing: border-box;
 appearance: none;
-border-radius: 8px;
+border-radius: 5px 8px 8px 5px;
 font-weight: normal;
 border: 0px;
 margin: 0px;
@@ -123,7 +128,6 @@ user-select: none;
 
 .resource{
   margin: 0 auto;
-  width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -133,12 +137,23 @@ user-select: none;
   padding:0 2px;
 }
 
-.hello{
+.subject-2{
   display: flex;
-  width: 0;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subject-2-render{
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+.divider-2{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 .search-fetch{
