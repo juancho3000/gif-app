@@ -9,12 +9,12 @@
 .title{
 display: flex;
 justify-content: center;
-margin: 2% 2% 4% 2%;
+margin: 2% 2% 4%;
 }
 
 .logo-container{
   display: flex;
-  margin: -32px;
+  margin: -35px 10px;
 }
 
 .title h1{
@@ -30,7 +30,7 @@ margin: 2% 2% 4% 2%;
 
 .logo{
   display: flex;
-  margin: -7% 36% 9% 36%;
+  margin: 0 0px 0px -190px;
 }
 
 .menu-choices{
@@ -40,7 +40,7 @@ margin: 2% 2% 4% 2%;
 .tags{
   display: flex;
   position: relative;
-  margin: -7% 18% 6%;
+  margin: 0% 18% 6%;
   justify-content: center;
 }
 
