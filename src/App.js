@@ -51,10 +51,11 @@ function App() {
     <div className="App-header">
       <div className='title'>
         <h1>GIF APP</h1>
-      </div>
-  <div className='logo-container'>
+        <div className='logo-container'>
         <Logo/>
       </div>
+      </div>
+
       <div className='tags'>
         <Tags/>
       </div>
