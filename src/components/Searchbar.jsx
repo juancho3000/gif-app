@@ -21,7 +21,7 @@ const handleSubmit = async event => {
                 setTimeout(()=>setAlerta(false),4000); 
                 console.log('sorry, there was an error');   
         });
-        if(searchGif.data.data.length === 0){
+        if(searchGif.data.length === 0){
             return setAlerta(true)
         }else{setAlerta(false)
             console.log(searchGif.data)
