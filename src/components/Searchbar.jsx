@@ -35,7 +35,7 @@ const renderError = () => {
              It seems there was an error, try again
             </div>
         )
-   }};
+   }console.log(renderError)};
 
 return(
     <div className='placeholder'>
