@@ -61,9 +61,3 @@ return(
 );   
 }
 export default Searchbar;
-
-//error test no definitive yet
-//catch{callbackError()
-   // setAlerta(true);
-   // setTimeout(()=>setAlerta(false),4000);
-//} 
