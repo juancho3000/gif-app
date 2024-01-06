@@ -33,7 +33,7 @@ const renderError = () => {
     if(alerta){
         return (
             <div class="alert alert-danger" role="alert">
-             It seems there was an error, try again
+             It seems there was an error, try again or write correctly
             </div>
         )
    }};
