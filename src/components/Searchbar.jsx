@@ -18,11 +18,12 @@ const handleSubmit = async event => {
 
         const inform = await searchGif(searchText, props.setInfo, props.results, ()=> {
                setAlerta(true); 
-                setTimeout(()=>setAlerta(false),4000); 
+                setTimeout(()=>setAlerta(true),4000); 
                 console.log('sorry, there was an error');   
         });
-        if(searchGif.data.length === 0){
+        if(inform?.length === 0){
             return setAlerta(true)
+            
         }else{setAlerta(false)
             console.log(searchGif.data)
         }    
